@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Am I Eligible? - KhelGaon</title>
+  <meta name="description" content="4-question eligibility checker to quickly find sports trials and government schemes you qualify for.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f5132">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="eligibility">
+  <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+  <!-- Mandatory Identity Component injected at top of body by js/identity.js -->
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper" aria-label="KhelGaon Home">
+        <span class="brand-logo-icon" aria-hidden="true">🏆</span>
+        <div>
+          <div class="brand-title" data-i18n="nav.brand">KhelGaon</div>
+          <div class="brand-tagline" data-i18n="nav.tagline">Rural Sports Portal</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" id="lang-toggle-btn" class="utility-btn" aria-label="Switch language to Hindi">
+          हिंदी
+        </button>
+        <button type="button" id="theme-toggle-btn" class="utility-btn" aria-label="Switch to dark mode">
+          🌙 Dark
+        </button>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Navigation Bar -->
+  <nav id="site-nav" class="site-nav collapsed" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">Find Opportunities</a></li>
+        <li><a href="eligibility.html" class="nav-link active" aria-current="page" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+        <li><a href="resources.html" class="nav-link" data-i18n="nav.resources">Free Resources</a></li>
+        <li><a href="submit.html" class="nav-link" data-i18n="nav.submit">Share an Opportunity</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Project</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <header class="page-intro">
+      <h1 class="page-title" data-i18n="el.title">Am I Eligible? (Quick 4-Question Finder)</h1>
+      <p class="page-subtitle" data-i18n="el.subtitle">
+        Answer 4 simple questions to find trials and schemes that match your profile.
+      </p>
+    </header>
+
+    <!-- 4-Question Interactive Form Card -->
+    <section class="filter-card" style="max-width: 680px; margin: 0 auto 32px;" aria-label="Eligibility Checker Form">
+      <div id="eligibility-error" class="form-error-summary" role="alert" style="display: none;"></div>
+
+      <form id="eligibility-quiz-form" novalidate>
+        <!-- Question 1: Age -->
+        <div class="form-group">
+          <label for="el-age" class="form-label" data-i18n="el.qAge">1. What is your age?</label>
+          <select id="el-age" class="form-select" required>
+            <option value="" disabled selected data-i18n="el.qAgePlaceholder">Select your current age in years...</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+          </select>
+          <div class="form-hint" data-i18n="el.ageHint">Most grassroots sports schemes cover students aged 10 to 19.</div>
+        </div>
+
+        <!-- Question 2: Gender -->
+        <div class="form-group">
+          <label for="el-gender" class="form-label" data-i18n="el.qGender">2. What is your gender?</label>
+          <select id="el-gender" class="form-select" required>
+            <option value="any" data-i18n="el.qGenderAny">Any / Both Boys &amp; Girls</option>
+            <option value="Boys" data-i18n="meta.Boys">Boys</option>
+            <option value="Girls" data-i18n="meta.Girls">Girls</option>
+          </select>
+        </div>
+
+        <!-- Question 3: State -->
+        <div class="form-group">
+          <label for="el-state" class="form-label" data-i18n="el.qState">3. Which state do you live in?</label>
+          <select id="el-state" class="form-select" required>
+            <option value="any" data-i18n="el.qStateAny">All India / Any State</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+          </select>
+        </div>
+
+        <!-- Question 4: Sport -->
+        <div class="form-group">
+          <label for="el-sport" class="form-label" data-i18n="el.qSport">4. Which sport do you play?</label>
+          <select id="el-sport" class="form-select" required>
+            <option value="any" data-i18n="el.qSportAny">Show Any Sport</option>
+            <option value="Athletics" data-i18n="sport.Athletics">Athletics</option>
+            <option value="Cricket" data-i18n="sport.Cricket">Cricket</option>
+            <option value="Kabaddi" data-i18n="sport.Kabaddi">Kabaddi</option>
+            <option value="Football" data-i18n="sport.Football">Football</option>
+            <option value="Hockey" data-i18n="sport.Hockey">Hockey</option>
+            <option value="Wrestling" data-i18n="sport.Wrestling">Wrestling</option>
+            <option value="Archery" data-i18n="sport.Archery">Archery</option>
+            <option value="Kho-Kho" data-i18n="sport.Kho-Kho">Kho-Kho</option>
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+          <button type="submit" class="btn btn-primary" style="flex: 1;">
+            <span aria-hidden="true">⚡</span>
+            <span data-i18n="el.checkBtn">Find Matching Trials Now</span>
+          </button>
+          <button type="button" id="eligibility-reset-btn" class="btn btn-outline" data-i18n="el.resetBtn">
+            Start Over
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Instant Results Container -->
+    <section id="eligibility-results" style="display: none;" aria-live="polite"></section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand" data-i18n="nav.brand">KhelGaon</div>
+        <p class="footer-desc" data-i18n="footer.desc">
+          A free academic web portal helping rural Indian students and PE teachers discover genuine sports opportunities.
+        </p>
+      </div>
+      <div>
+        <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="opportunities.html" data-i18n="nav.opportunities">Find Opportunities</a></li>
+          <li><a href="resources.html" data-i18n="nav.resources">Free Resources</a></li>
+          <li><a href="submit.html" data-i18n="nav.submit">Share an Opportunity</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Name: GARGI SANJAY PUSNAKE | Scholar Number: 26U020109 | FoCP (CSE-1003)</div>
+      <div data-i18n="footer.tech">Plain HTML5, CSS3 &amp; Vanilla JS | Offline PWA</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/identity.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/saved.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

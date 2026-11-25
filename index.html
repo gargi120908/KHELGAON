@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KhelGaon - Rural Indian Sports Portal | Trials &amp; Schemes</title>
+  <meta name="description" content="KhelGaon connects rural Indian students to sports selection trials, camps, scholarships, and government schemes.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f5132">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+  <!-- Mandatory Identity Component injected at top of body by js/identity.js -->
+
+  <!-- Site Header with Track-Lane Motif -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper" aria-label="KhelGaon Home">
+        <span class="brand-logo-icon" aria-hidden="true">🏆</span>
+        <div>
+          <div class="brand-title" data-i18n="nav.brand">KhelGaon</div>
+          <div class="brand-tagline" data-i18n="nav.tagline">Rural Sports Portal</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" id="lang-toggle-btn" class="utility-btn" aria-label="Switch language to Hindi">
+          हिंदी
+        </button>
+        <button type="button" id="theme-toggle-btn" class="utility-btn" aria-label="Switch to dark mode">
+          🌙 Dark
+        </button>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Navigation Bar -->
+  <nav id="site-nav" class="site-nav collapsed" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active" aria-current="page" data-i18n="nav.home">Home</a></li>
+        <li><a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">Find Opportunities</a></li>
+        <li><a href="eligibility.html" class="nav-link" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+        <li><a href="resources.html" class="nav-link" data-i18n="nav.resources">Free Resources</a></li>
+        <li><a href="submit.html" class="nav-link" data-i18n="nav.submit">Share an Opportunity</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Project</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <!-- Prominent Student Identity Spotlight on Homepage -->
+    <div id="home-identity-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <h1 id="hero-heading" class="hero-mission" data-i18n="home.mission">
+        Connecting Rural Indian Students to Sports Trials, Camps, Scholarships &amp; Schemes
+      </h1>
+      <p class="hero-sub" data-i18n="home.submission">
+        Talent has no postal code. We gather real programmes for students aged 10-19 so no athlete in any village is left behind.
+      </p>
+
+      <form id="hero-search-form" class="hero-search-form" role="search" aria-label="Search Sports Opportunities">
+        <label for="hero-search-input" class="sr-only">Search sports trials, schemes or districts</label>
+        <input
+          type="search"
+          id="hero-search-input"
+          class="hero-search-input"
+          placeholder="Search by sport, scheme name, or district (e.g. Athletics, Kabaddi, Haryana)..."
+          data-i18n-placeholder="home.searchPlaceholder"
+          autocomplete="off"
+        >
+        <button type="submit" class="btn btn-accent hero-search-btn">
+          <span aria-hidden="true">🔍</span>
+          <span data-i18n="home.searchButton">Search Trials</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Sport Quick-Buttons -->
+    <section class="quick-sports-section" aria-labelledby="quick-sports-heading">
+      <h2 id="quick-sports-heading" class="section-heading">
+        <span aria-hidden="true">⚡</span>
+        <span data-i18n="home.quickSportsTitle">Select Your Sport to Begin:</span>
+      </h2>
+      <div class="sports-pill-grid">
+        <a href="opportunities.html?sport=Cricket" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🏏</span>
+          <span data-i18n="sport.Cricket">Cricket</span>
+        </a>
+        <a href="opportunities.html?sport=Kabaddi" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🤼</span>
+          <span data-i18n="sport.Kabaddi">Kabaddi</span>
+        </a>
+        <a href="opportunities.html?sport=Athletics" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🏃</span>
+          <span data-i18n="sport.Athletics">Athletics</span>
+        </a>
+        <a href="opportunities.html?sport=Football" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">⚽</span>
+          <span data-i18n="sport.Football">Football</span>
+        </a>
+        <a href="opportunities.html?sport=Hockey" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🏑</span>
+          <span data-i18n="sport.Hockey">Hockey</span>
+        </a>
+        <a href="opportunities.html?sport=Wrestling" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🥊</span>
+          <span data-i18n="sport.Wrestling">Wrestling</span>
+        </a>
+        <a href="opportunities.html?sport=Archery" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🏹</span>
+          <span data-i18n="sport.Archery">Archery</span>
+        </a>
+        <a href="opportunities.html?sport=Kho-Kho" class="sport-pill-btn">
+          <span class="sport-pill-icon" aria-hidden="true">🤝</span>
+          <span data-i18n="sport.Kho-Kho">Kho-Kho</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- How It Works in 3 Steps -->
+    <section aria-labelledby="how-it-works-heading" style="margin-bottom: 32px;">
+      <h2 id="how-it-works-heading" class="section-heading">
+        <span aria-hidden="true">📋</span>
+        <span data-i18n="home.howItWorksTitle">How KhelGaon Works</span>
+      </h2>
+      <div class="how-it-works-grid">
+        <article class="step-card">
+          <div class="step-number" aria-hidden="true">1</div>
+          <h3 class="step-title" data-i18n="home.howStep1Title">1. Search Your Sport</h3>
+          <p class="step-desc" data-i18n="home.howStep1Desc">
+            Choose your sport and state to find selection trials, training camps, and government sports schemes.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number" aria-hidden="true">2</div>
+          <h3 class="step-title" data-i18n="home.howStep2Title">2. Check Documents</h3>
+          <p class="step-desc" data-i18n="home.howStep2Desc">
+            Read age rules, eligibility criteria, and documents needed (Aadhaar, birth certificate, school bonafide).
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number" aria-hidden="true">3</div>
+          <h3 class="step-title" data-i18n="home.howStep3Title">3. Show Up &amp; Perform</h3>
+          <p class="step-desc" data-i18n="home.howStep3Desc">
+            Verify dates on the official portal and report directly to the trial ground with zero middlemen or fees.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why This Matters & Sample Story -->
+    <section aria-labelledby="why-matters-heading">
+      <h2 id="why-matters-heading" class="section-heading">
+        <span aria-hidden="true">💡</span>
+        <span data-i18n="home.whyMattersTitle">Why This Matters</span>
+      </h2>
+      <p style="margin-bottom: 12px; font-size: 1.02rem;" data-i18n="home.whyMattersP1">
+        In rural India, millions of gifted runners, wrestlers, and kabaddi players train on village mud grounds without knowing when government selection trials happen.
+      </p>
+      <p style="margin-bottom: 16px; font-size: 1.02rem;" data-i18n="home.whyMattersP2">
+        Official notices are often hidden in PDFs across scattered portals and written in hard English. KhelGaon keeps everything simple, fast on slow phones, and free.
+      </p>
+
+      <div class="story-callout-card" role="region" aria-label="Sample inspiration story">
+        <span class="story-badge" data-i18n="home.sampleStoryTitle">Inspiration Story (Sample story)</span>
+        <blockquote class="story-quote" data-i18n="home.sampleStoryQuote">
+          "I used to run 5 km every morning on village canal roads. My school master saw a trial notice on KhelGaon and helped me reach the district stadium with my Aadhaar card. Today I have free hostel training and proper spikes."
+        </blockquote>
+        <div class="story-author" data-i18n="home.sampleStoryAuthor">
+          — Ramesh (Under-16 800m Runner, District Satara) [Sample story]
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand" data-i18n="nav.brand">KhelGaon</div>
+        <p class="footer-desc" data-i18n="footer.desc">
+          A free academic web portal helping rural Indian students and PE teachers discover genuine sports opportunities.
+        </p>
+      </div>
+      <div>
+        <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+        <ul class="footer-links">
+          <li><a href="opportunities.html" data-i18n="nav.opportunities">Find Opportunities</a></li>
+          <li><a href="eligibility.html" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+          <li><a href="resources.html" data-i18n="nav.resources">Free Resources</a></li>
+          <li><a href="submit.html" data-i18n="nav.submit">Share an Opportunity</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Name: GARGI SANJAY PUSNAKE | Scholar Number: 26U020109 | FoCP (CSE-1003)</div>
+      <div data-i18n="footer.tech">Plain HTML5, CSS3 &amp; Vanilla JS | Offline PWA</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/identity.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/saved.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share a Trial - KhelGaon</title>
+  <meta name="description" content="PE teachers and sports coaches can share local selection trials and camps for rural students.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f5132">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="submit">
+  <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+  <!-- Mandatory Identity Component injected at top of body by js/identity.js -->
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper" aria-label="KhelGaon Home">
+        <span class="brand-logo-icon" aria-hidden="true">🏆</span>
+        <div>
+          <div class="brand-title" data-i18n="nav.brand">KhelGaon</div>
+          <div class="brand-tagline" data-i18n="nav.tagline">Rural Sports Portal</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" id="lang-toggle-btn" class="utility-btn" aria-label="Switch language to Hindi">
+          हिंदी
+        </button>
+        <button type="button" id="theme-toggle-btn" class="utility-btn" aria-label="Switch to dark mode">
+          🌙 Dark
+        </button>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Navigation Bar -->
+  <nav id="site-nav" class="site-nav collapsed" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="opportunities.html" class="nav-link" data-i18n="nav.opportunities">Find Opportunities</a></li>
+        <li><a href="eligibility.html" class="nav-link" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+        <li><a href="resources.html" class="nav-link" data-i18n="nav.resources">Free Resources</a></li>
+        <li><a href="submit.html" class="nav-link active" aria-current="page" data-i18n="nav.submit">Share an Opportunity</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Project</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <header class="page-intro">
+      <h1 class="page-title" data-i18n="sub.title">Share a Trial (For PE Teachers &amp; Coaches)</h1>
+      <p class="page-subtitle" data-i18n="sub.subtitle">
+        Know a district trial, school competition, or sports camp? Add it here so local students can find it.
+      </p>
+    </header>
+
+    <!-- Thank-You Box (Shown after valid submission) -->
+    <div id="submit-success-box" class="empty-state" style="display: none; border-color: var(--primary-green);" role="status" aria-live="polite">
+      <div class="empty-icon" aria-hidden="true">🎉</div>
+      <h2 class="empty-title" style="color: var(--primary-green);" data-i18n="sub.successTitle">Thank You for Helping Rural Athletes!</h2>
+      <p class="empty-desc" data-i18n="sub.successDesc">
+        Your trial has been saved to this browser's localStorage and is now live in the opportunities list.
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="opportunities.html" class="btn btn-primary" data-i18n="sub.viewNewBtn">
+          View on Opportunities Page →
+        </a>
+        <button type="button" id="submit-another-btn" class="btn btn-outline" data-i18n="sub.submitAnotherBtn">
+          Share Another Opportunity
+        </button>
+      </div>
+    </div>
+
+    <!-- Submission Form Card -->
+    <section id="submit-form-card" class="filter-card" style="max-width: 760px; margin: 0 auto;">
+      <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;" data-i18n="sub.formTitle">
+        Trial Submission Form
+      </h2>
+
+      <div id="submit-error-summary" class="form-error-summary" role="alert" style="display: none;"></div>
+
+      <form id="submit-opportunity-form" novalidate>
+        <div class="form-group">
+          <label for="sub-title" class="form-label" data-i18n="sub.fieldTitle">Opportunity / Trial Title *</label>
+          <input
+            type="text"
+            id="sub-title"
+            class="form-input"
+            required
+            placeholder="e.g. District Under-17 Kabaddi Selection Rally"
+            data-i18n-placeholder="sub.phTitle"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="sub-org" class="form-label" data-i18n="sub.fieldOrg">Organizing Authority or School *</label>
+          <input
+            type="text"
+            id="sub-org"
+            class="form-input"
+            required
+            placeholder="e.g. District Sports Office (DSO)"
+            data-i18n-placeholder="sub.phOrg"
+          >
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="sub-sport" class="form-label" data-i18n="sub.fieldSport">Sport *</label>
+            <select id="sub-sport" class="form-select" required>
+              <option value="Athletics" data-i18n="sport.Athletics">Athletics</option>
+              <option value="Cricket" data-i18n="sport.Cricket">Cricket</option>
+              <option value="Kabaddi" data-i18n="sport.Kabaddi">Kabaddi</option>
+              <option value="Football" data-i18n="sport.Football">Football</option>
+              <option value="Hockey" data-i18n="sport.Hockey">Hockey</option>
+              <option value="Wrestling" data-i18n="sport.Wrestling">Wrestling</option>
+              <option value="Archery" data-i18n="sport.Archery">Archery</option>
+              <option value="Kho-Kho" data-i18n="sport.Kho-Kho">Kho-Kho</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-type" class="form-label" data-i18n="sub.fieldType">Type *</label>
+            <select id="sub-type" class="form-select" required>
+              <option value="Trial" data-i18n="meta.Trial">Trial</option>
+              <option value="Scholarship" data-i18n="meta.Scholarship">Scholarship</option>
+              <option value="Camp" data-i18n="meta.Camp">Camp</option>
+              <option value="Scheme" data-i18n="meta.Scheme">Scheme</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="sub-state" class="form-label" data-i18n="sub.fieldState">State *</label>
+            <select id="sub-state" class="form-select" required>
+              <option value="All India" data-i18n="meta.All India">All India</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-district" class="form-label" data-i18n="sub.fieldDistrict">District / Venue Location *</label>
+            <input
+              type="text"
+              id="sub-district"
+              class="form-input"
+              required
+              placeholder="e.g. Kolhapur District Stadium"
+              data-i18n-placeholder="sub.phDistrict"
+            >
+          </div>
+        </div>
+
+        <div class="form-row-3">
+          <div class="form-group">
+            <label for="sub-min-age" class="form-label" data-i18n="sub.fieldAgeMin">Min Age (Years) *</label>
+            <input type="number" id="sub-min-age" class="form-input" min="8" max="25" value="12" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-max-age" class="form-label" data-i18n="sub.fieldAgeMax">Max Age (Years) *</label>
+            <input type="number" id="sub-max-age" class="form-input" min="8" max="25" value="18" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-gender" class="form-label" data-i18n="sub.fieldGender">Gender *</label>
+            <select id="sub-gender" class="form-select" required>
+              <option value="All" data-i18n="filter.genderAll">All Genders</option>
+              <option value="Boys" data-i18n="filter.genderBoys">Boys Only</option>
+              <option value="Girls" data-i18n="filter.genderGirls">Girls Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sub-benefits" class="form-label" data-i18n="sub.fieldBenefits">Key Benefits Provided (hostel, kit, diet, certificate) *</label>
+          <textarea
+            id="sub-benefits"
+            class="form-textarea"
+            rows="3"
+            required
+            placeholder="e.g. Free residential coaching, sports kit, tournament entry..."
+            data-i18n-placeholder="sub.phBenefits"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="sub-docs" class="form-label" data-i18n="sub.fieldDocs">Key Documents Required *</label>
+          <textarea
+            id="sub-docs"
+            class="form-textarea"
+            rows="3"
+            required
+            placeholder="Put each document on a new line:&#10;Aadhaar Card&#10;School Bonafide Certificate&#10;Medical Certificate"
+            data-i18n-placeholder="sub.phDocs"
+          ></textarea>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="sub-link" class="form-label" data-i18n="sub.fieldLink">Official Website Link (optional)</label>
+            <input
+              type="url"
+              id="sub-link"
+              class="form-input"
+              placeholder="https://..."
+              data-i18n-placeholder="sub.phLink"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="sub-submitter" class="form-label" data-i18n="sub.fieldContact">Your Name &amp; Role (optional)</label>
+            <input
+              type="text"
+              id="sub-submitter"
+              class="form-input"
+              placeholder="e.g. Rajesh Patil, PE Teacher, ZP High School"
+              data-i18n-placeholder="sub.phContact"
+            >
+          </div>
+        </div>
+
+        <div style="margin-top: 18px;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span aria-hidden="true">📢</span>
+            <span data-i18n="sub.submitBtn">Submit Opportunity</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand" data-i18n="nav.brand">KhelGaon</div>
+        <p class="footer-desc" data-i18n="footer.desc">
+          A free academic web portal helping rural Indian students and PE teachers discover genuine sports opportunities.
+        </p>
+      </div>
+      <div>
+        <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="opportunities.html" data-i18n="nav.opportunities">Find Opportunities</a></li>
+          <li><a href="eligibility.html" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+          <li><a href="resources.html" data-i18n="nav.resources">Free Resources</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Name: GARGI SANJAY PUSNAKE | Scholar Number: 26U020109 | FoCP (CSE-1003)</div>
+      <div data-i18n="footer.tech">Plain HTML5, CSS3 &amp; Vanilla JS | Offline PWA</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/identity.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/saved.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

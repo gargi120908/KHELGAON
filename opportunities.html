@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities Directory - KhelGaon</title>
+  <meta name="description" content="Browse sports selection trials, camps, scholarships, and government schemes across India.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f5132">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="opportunities">
+  <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
+  <!-- Mandatory Identity Component injected at top of body by js/identity.js -->
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper" aria-label="KhelGaon Home">
+        <span class="brand-logo-icon" aria-hidden="true">🏆</span>
+        <div>
+          <div class="brand-title" data-i18n="nav.brand">KhelGaon</div>
+          <div class="brand-tagline" data-i18n="nav.tagline">Rural Sports Portal</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" id="lang-toggle-btn" class="utility-btn" aria-label="Switch language to Hindi">
+          हिंदी
+        </button>
+        <button type="button" id="theme-toggle-btn" class="utility-btn" aria-label="Switch to dark mode">
+          🌙 Dark
+        </button>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global Navigation Bar -->
+  <nav id="site-nav" class="site-nav collapsed" aria-label="Main Navigation">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="opportunities.html" class="nav-link active" aria-current="page" data-i18n="nav.opportunities">Find Opportunities</a></li>
+        <li><a href="eligibility.html" class="nav-link" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+        <li><a href="resources.html" class="nav-link" data-i18n="nav.resources">Free Resources</a></li>
+        <li><a href="submit.html" class="nav-link" data-i18n="nav.submit">Share an Opportunity</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Project</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <header class="page-intro">
+      <h1 class="page-title" data-i18n="opps.title">Sports Opportunities &amp; Trials Directory</h1>
+      <p class="page-subtitle" data-i18n="opps.subtitle">
+        Browse real government schemes, residential sports academies, talent hunts, and district trials.
+      </p>
+    </header>
+
+    <!-- Tab Switching: All Opportunities vs Saved Items -->
+    <div class="tabs-container" role="tablist" aria-label="Opportunity Views">
+      <button type="button" id="tab-all" class="tab-btn active" role="tab" aria-selected="true" data-i18n="opps.allTab">
+        All Opportunities
+      </button>
+      <button type="button" id="tab-saved" class="tab-btn" role="tab" aria-selected="false">
+        <span data-i18n="opps.savedTab">Saved Items</span> ❤️
+        <span id="saved-count-badge" class="badge badge-type">0</span>
+      </button>
+    </div>
+
+    <!-- Filter Control Card -->
+    <section class="filter-card" aria-label="Filter Controls">
+      <div class="filter-grid">
+        <!-- 1. Instant Keyword Search -->
+        <div class="form-group">
+          <label for="filter-keyword" class="form-label" data-i18n="filter.searchLabel">Search Keyword</label>
+          <input
+            type="search"
+            id="filter-keyword"
+            class="form-input"
+            placeholder="Filter by trial name, sport, or keyword..."
+            data-i18n-placeholder="filter.searchPlaceholder"
+          >
+        </div>
+
+        <!-- 2. Sport Filter -->
+        <div class="form-group">
+          <label for="filter-sport" class="form-label" data-i18n="filter.sportLabel">Sport</label>
+          <select id="filter-sport" class="form-select">
+            <option value="all" data-i18n="filter.sportAll">All Sports</option>
+            <option value="Athletics" data-i18n="sport.Athletics">Athletics</option>
+            <option value="Cricket" data-i18n="sport.Cricket">Cricket</option>
+            <option value="Kabaddi" data-i18n="sport.Kabaddi">Kabaddi</option>
+            <option value="Football" data-i18n="sport.Football">Football</option>
+            <option value="Hockey" data-i18n="sport.Hockey">Hockey</option>
+            <option value="Wrestling" data-i18n="sport.Wrestling">Wrestling</option>
+            <option value="Archery" data-i18n="sport.Archery">Archery</option>
+            <option value="Kho-Kho" data-i18n="sport.Kho-Kho">Kho-Kho</option>
+          </select>
+        </div>
+
+        <!-- 3. State / Region Filter -->
+        <div class="form-group">
+          <label for="filter-state" class="form-label" data-i18n="filter.stateLabel">State / Region</label>
+          <select id="filter-state" class="form-select">
+            <option value="all" data-i18n="filter.stateAll">All States (All India)</option>
+            <option value="All India" data-i18n="filter.stateAllIndia">All India Schemes</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+          </select>
+        </div>
+
+        <!-- 4. Gender Filter -->
+        <div class="form-group">
+          <label for="filter-gender" class="form-label" data-i18n="filter.genderLabel">Gender</label>
+          <select id="filter-gender" class="form-select">
+            <option value="all" data-i18n="filter.genderAll">All Genders</option>
+            <option value="Boys" data-i18n="filter.genderBoys">Boys Only</option>
+            <option value="Girls" data-i18n="filter.genderGirls">Girls Only</option>
+          </select>
+        </div>
+
+        <!-- 5. Opportunity Type Filter -->
+        <div class="form-group">
+          <label for="filter-type" class="form-label" data-i18n="filter.typeLabel">Opportunity Type</label>
+          <select id="filter-type" class="form-select">
+            <option value="all" data-i18n="filter.typeAll">All Types</option>
+            <option value="Trial" data-i18n="filter.typeTrial">Trials</option>
+            <option value="Scholarship" data-i18n="filter.typeScholarship">Scholarships</option>
+            <option value="Camp" data-i18n="filter.typeCamp">Training Camps</option>
+            <option value="Scheme" data-i18n="filter.typeScheme">Government Schemes</option>
+          </select>
+        </div>
+
+        <!-- 6. Age Group / Exact Age Filter -->
+        <div class="form-group">
+          <label for="filter-age" class="form-label" data-i18n="filter.ageLabel">Age Group / Your Age</label>
+          <select id="filter-age" class="form-select">
+            <option value="all" data-i18n="filter.ageAll">Any Age (All Groups)</option>
+            <option value="10-13" data-i18n="filter.ageU14">Under-14 (10-13 Years)</option>
+            <option value="14-16" data-i18n="filter.ageU17">Under-17 (14-16 Years)</option>
+            <option value="17-19" data-i18n="filter.ageU19">Under-19 (17-19 Years)</option>
+            <option value="10">10 Years</option>
+            <option value="11">11 Years</option>
+            <option value="12">12 Years</option>
+            <option value="13">13 Years</option>
+            <option value="14">14 Years</option>
+            <option value="15">15 Years</option>
+            <option value="16">16 Years</option>
+            <option value="17">17 Years</option>
+            <option value="18">18 Years</option>
+            <option value="19">19 Years</option>
+          </select>
+        </div>
+
+        <!-- 7. District / Village Text Filter (No GPS needed) -->
+        <div class="form-group">
+          <label for="filter-district" class="form-label" data-i18n="filter.districtLabel">District / Village Area</label>
+          <input
+            type="text"
+            id="filter-district"
+            class="form-input"
+            placeholder="Enter district (e.g. Rohtak, Pune)..."
+            data-i18n-placeholder="filter.districtPlaceholder"
+          >
+          <div class="form-hint" data-i18n="filter.districtHint">Type your district or nearby town name (works without GPS)</div>
+        </div>
+
+        <!-- 8. Sort Options -->
+        <div class="form-group">
+          <label for="filter-sort" class="form-label" data-i18n="filter.sortLabel">Sort By</label>
+          <select id="filter-sort" class="form-select">
+            <option value="default" data-i18n="filter.sortDefault">Default Listing</option>
+            <option value="closing" data-i18n="filter.sortClosing">Closing Soon First ⚡</option>
+            <option value="age" data-i18n="filter.sortAge">Age: Youngest First</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Action Footer with Results Counter & Reset Button -->
+      <div class="filter-actions">
+        <div id="results-count-display" class="results-count" aria-live="polite" data-i18n="app.loading">
+          Loading sports opportunities...
+        </div>
+        <button type="button" id="filter-reset-btn" class="btn btn-outline btn-sm" data-i18n="filter.resetBtn">
+          Reset All Filters
+        </button>
+      </div>
+    </section>
+
+    <!-- Opportunities Cards Grid Container -->
+    <div id="opportunities-grid" class="cards-grid" role="list" aria-label="Opportunities List">
+      <!-- Dynamic cards rendered by js/filters.js -->
+    </div>
+
+    <!-- Friendly Empty State (shown when zero matches) -->
+    <div id="empty-state" class="empty-state" style="display: none;" role="region" aria-label="No Results">
+      <div class="empty-icon" aria-hidden="true">🏃‍♂️</div>
+      <h2 id="empty-title" class="empty-title" data-i18n="empty.title">No opportunities found matching your filters</h2>
+      <p id="empty-desc" class="empty-desc" data-i18n="empty.desc">
+        Try clearing some filters or switching to 'All Sports' and 'All States'.
+      </p>
+      <button type="button" id="empty-reset-btn" class="btn btn-accent" data-i18n="empty.resetBtn">
+        Clear All Filters
+      </button>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand" data-i18n="nav.brand">KhelGaon</div>
+        <p class="footer-desc" data-i18n="footer.desc">
+          A free academic web portal helping rural Indian students and PE teachers discover genuine sports opportunities.
+        </p>
+      </div>
+      <div>
+        <h2 class="footer-heading" data-i18n="footer.quickLinks">Quick Links</h2>
+        <ul class="footer-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="eligibility.html" data-i18n="nav.eligibility">Am I Eligible?</a></li>
+          <li><a href="resources.html" data-i18n="nav.resources">Free Resources</a></li>
+          <li><a href="submit.html" data-i18n="nav.submit">Share an Opportunity</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Name: GARGI SANJAY PUSNAKE | Scholar Number: 26U020109 | FoCP (CSE-1003)</div>
+      <div data-i18n="footer.tech">Plain HTML5, CSS3 &amp; Vanilla JS | Offline PWA</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/identity.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/saved.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
